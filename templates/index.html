@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <!---
+   <h3> x={{x}}</h3>
+   <h3> y={{y}}</h3>
+
+    {% if x > y %}
+        <i>x={{x}} : is grater</i>
+    {% else %}
+        <i>y={{y}} : is grater</i>
+    {% endif %}
+    --->
+    {% comment %}
+    
+       <h2>Display using Loop:</h2>
+       {% for x in data %} <!---x in [10,20,30,40,50,60]--->
+            <p>{{x}}</p>
+       {% endfor %}
+
+    {% endcomment %}
+
+</body> 
+</html>

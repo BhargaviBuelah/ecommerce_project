@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+<div class="col-md-4 mt-5">
+    <h4>Update Product Details</h4> 
+    <hr>
+  <form method="POST" action="">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+        <label for="pname" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="pname" name="pname" value="{{data.name}}" placeholder="Enter Product Name">
+    </div>
+    <div class="mb-3">
+        <label for="pdesc" class="form-label">Product Description</label>
+        <textarea class="form-control" id="pdesc" name="pdesc" rows="3">{{data.pdesc}}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="pprice" class="form-label">Product price</label>
+        <input type="number" class="form-control" id="price" name="pprice" value="{{data.price}}" placeholder="Enter Product price">
+    </div>
+    <div class="mb-3">
+    <select class="form-select" name="cat" value="" aria-label="Default select example">
+        {% if data.cat == 'E' %}
+        <option value="E" selected>Electronics</option>
+        {% elif data.cat == 'C' %}
+        <option value="C" selected>Cloths</option>
+        {% elif data.cat == 'G' %}
+        <option value="G" selected>Grocery</option>
+        {% endif %} 
+        <option value="E">Electronics</option>
+        <option value="G">Grocery</option>
+        <option value="C">Clothes</option>
+      </select>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit">Update Product</button>
+    </div>
+  </form>
+</div>
+    
+{% endblock 'main' %}
